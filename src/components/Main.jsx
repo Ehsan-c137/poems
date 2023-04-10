@@ -31,7 +31,7 @@ const Main = () => {
    };
 
    return (
-      <div className="flex flex-col justify-center items-center mt-8 ">
+      <div className="flex flex-col justify-center items-center mt-8 min-w-[70%] ">
          <button
             onClick={fetchData}
             className="text-[#ffdbaf] p-2 hover:text-white hover:bg-[#ffdbaf2b] transition-colors duration-500"
@@ -39,7 +39,7 @@ const Main = () => {
             {!poems ? "Fetch poems" : "Fetch new poems"}
          </button>
 
-         <div className="min-width-full mb-8 mt-8">
+         <div className="min-w-full mb-8 mt-8">
             {isloading && (
                <div className="flex justify-center mt-8 mb-8">
                   <SyncLoader color="#ffdbaf" size={10} speedMultiplier={0.7} />

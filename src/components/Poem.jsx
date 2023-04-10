@@ -1,6 +1,6 @@
 import StarIcon from "../assets/icons/StarIcon";
 import { poemContext } from "../context/poem-context";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Poem = ({ poemData }) => {
@@ -21,7 +21,7 @@ const Poem = ({ poemData }) => {
 
    return (
       <li
-         className="flex p-4 max-w-6xl mb-4 border-b-2 rounded-t-md rounded-tr-md border-[#dcdcdc15] bg-[#55555538] text-sm md:text-xl"
+         className="flex p-4 max-w-6xl mb-4 border-b-2 rounded-t-md rounded-tr-md border-[#dcdcdc15] bg-[#55555538] text-sm md:text-xl min-w-[70%]"
          key={poemData.data.title}
       >
          <div className="flex justify-between min-w-full">
@@ -45,7 +45,7 @@ const Poem = ({ poemData }) => {
                   to={`poem/${poemData.data.title} - ${poemData.data.author}`}
                   className="text-white mt-4 cursor-pointer text-sm"
                >
-                  Read the poem
+                  Read
                </Link>
             </div>
             {/* {showPoem && <p className="text-white">{poemData.data.lines[0]}</p>} */}
