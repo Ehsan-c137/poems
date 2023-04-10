@@ -9,12 +9,12 @@ const PoemDetail = () => {
    const title = titleAuthor.slice(0, indexofHyphen).trim();
 
    return (
-      <div className="text-white p-8">
+      <div className="text-white md:p-8">
          <div className="bg-[#dcdcdc12]  pl-8 pr-8 pt-8 pb-0 rounded-tl-lg rounded-tr-xl ">
             <h3>{title}</h3>
             <h3 className="text-[#ffdbaf]">{author}</h3>
          </div>
-         <p className="p-8 bg-[#dcdcdc12]">
+         <p className="p-8 bg-[#dcdcdc12] text-m md:text-xl">
             {poems.map((poem) => {
                const poemTitle = poem.data.title;
                const poemAuthor = poem.data.author;

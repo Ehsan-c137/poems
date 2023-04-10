@@ -21,13 +21,13 @@ const Poem = ({ poemData }) => {
 
    return (
       <li
-         className="flex p-4 max-w-6xl mb-4 border-b-2 rounded-t-md rounded-tr-md border-[#dcdcdc15] bg-[#55555538]"
+         className="flex p-4 max-w-6xl mb-4 border-b-2 rounded-t-md rounded-tr-md border-[#dcdcdc15] bg-[#55555538] text-sm md:text-xl"
          key={poemData.data.title}
       >
          <div className="flex justify-between min-w-full">
             <div className="flex flex-col">
                <p
-                  className="text-m text-[#ffdbaf] cursor-pointer"
+                  className="text-m text-[#ffdbaf] cursor-pointer "
                   onClick={showPoemHandler}
                >
                   {poemData.data.title}
@@ -36,14 +36,14 @@ const Poem = ({ poemData }) => {
                   {poemData.data.author}
                </p>
             </div>
-            <div className="flex flex-col justify-between items-end cursor-pointer ">
+            <div className="flex flex-col justify-between items-end  ">
                <StarIcon
                   isFavorite={poemData.isFav}
                   clickHandler={starClickHandler}
                />
                <Link
                   to={`poem/${poemData.data.title} - ${poemData.data.author}`}
-                  className="text-white mt-4 cursor-pointer"
+                  className="text-white mt-4 cursor-pointer text-sm"
                >
                   Read the poem
                </Link>

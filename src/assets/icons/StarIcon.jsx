@@ -1,7 +1,7 @@
 const StarIcon = ({ isFavorite, clickHandler }) => {
    const style = isFavorite ? "text-yellow-500" : "text-gray-300";
    return (
-      <div onClick={clickHandler}>
+      <div onClick={clickHandler} className="cursor-pointer">
          <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
