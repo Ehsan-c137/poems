@@ -11,7 +11,7 @@ function App() {
       <FavoritePoemsProvider>
          <div className="App ">
             <Header />
-            <div className="min-w-[70%] max-w-[1280px]">
+            <div className="min-w-[100%] md:min-w-[70%] max-w-[1280px]">
                <Routes>
                   <Route exact path="/" element={<Main />} />
                   <Route path="/favoritePoems" element={<FavoritePoems />} />

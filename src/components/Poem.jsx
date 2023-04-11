@@ -21,15 +21,12 @@ const Poem = ({ poemData }) => {
 
    return (
       <li
-         className="flex p-4 max-w-6xl mb-4 border-b-2 rounded-t-md rounded-tr-md border-[#dcdcdc15] bg-[#55555538] text-sm md:text-xl min-w-[70%]"
+         className="flex p-4 max-w-6xl mb-4 border-b-2 rounded-t-md rounded-tr-md border-[#dcdcdc15] bg-[#55555538] text-sm md:text-xl min-w-[100%]"
          key={poemData.data.title}
       >
          <div className="flex justify-between min-w-full">
             <div className="flex flex-col">
-               <p
-                  className="text-m text-[#ffdbaf] cursor-pointer "
-                  onClick={showPoemHandler}
-               >
+               <p className="text-m text-[#ffdbaf]" onClick={showPoemHandler}>
                   {poemData.data.title}
                </p>
                <p className="text-l font-bold text-[#dcdcdc] mt-4 ">

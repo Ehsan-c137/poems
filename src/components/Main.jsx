@@ -19,11 +19,24 @@ const Main = () => {
                uData.push({ data, isFav: false });
             }
 
-            setPoems(uData);
+            setPoems((prevState) => {
+               if (prevState != undefined) {
+                  const nonRepetitivePoem = uData.filter(
+                     (item1) =>
+                        !prevState.some(
+                           (item2) => item1.data.title === item2.data.title
+                        )
+                  );
+                  return [...prevState, ...nonRepetitivePoem];
+               } else {
+                  return [...uData];
+               }
+            });
+
             setIsLoading(false);
          })
          .catch((error) => {
-            console.log(error.message);
+            console.log(error);
          })
          .finally(() => {
             setIsLoading(false);
@@ -45,6 +58,7 @@ const Main = () => {
                   <SyncLoader color="#ffdbaf" size={10} speedMultiplier={0.7} />
                </div>
             )}
+
             {poems?.map((poem, i) => {
                return (
                   <Poem
@@ -59,3 +73,12 @@ const Main = () => {
 };
 
 export default Main;
+
+// const arr1 = [{ id: 1 }, { id: 2 }, { id: 3 }];
+// const arr2 = [{ id: 2 }, { id: 3 }, { id: 4 }];
+// const sameObjects = arr1.filter((obj1) => {
+//    return arr2.some((obj2) => {
+//       return obj1.id === obj2.id;
+//    });
+// });
+// console.log(sameObjects); // [{id: 2}, {id: 3}]

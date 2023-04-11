@@ -17,7 +17,7 @@ const FavoritePoems = () => {
    }, [poems]);
 
    return (
-      <div className="mt-8">
+      <div className="mt-8 w-full">
          <p className="text-[#ffdbaf] text-center mb-8">your favorite poems</p>
          {favPoems?.map((poem) => {
             return <Poem poemData={poem} key={poem.data.title} />;
