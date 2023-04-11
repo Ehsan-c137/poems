@@ -73,12 +73,3 @@ const Main = () => {
 };
 
 export default Main;
-
-// const arr1 = [{ id: 1 }, { id: 2 }, { id: 3 }];
-// const arr2 = [{ id: 2 }, { id: 3 }, { id: 4 }];
-// const sameObjects = arr1.filter((obj1) => {
-//    return arr2.some((obj2) => {
-//       return obj1.id === obj2.id;
-//    });
-// });
-// console.log(sameObjects); // [{id: 2}, {id: 3}]
