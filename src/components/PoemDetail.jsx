@@ -19,7 +19,6 @@ const PoemDetail = () => {
                const poemTitle = poem.data.title;
                const poemAuthor = poem.data.author;
                if (poemTitle == title && poemAuthor == author) {
-                  console.log(poem);
                   return poem.data.lines.map((line) => {
                      return line;
                   });

@@ -3,13 +3,17 @@ import { poemContext } from "../context/poem-context";
 import SyncLoader from "react-spinners/SyncLoader";
 import Poem from "./Poem";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const Main = () => {
-   const [isloading, setIsLoading] = useState(false);
    const { poems, setPoems } = poemContext();
+   const [isloading, setIsLoading] = useState(false);
+
+   const notify = (msg) => toast.error(msg);
 
    const fetchData = () => {
       setIsLoading(true);
+
       axios
          .get("https://poetrydb.org/random/20")
          .then((data) => {
@@ -36,7 +40,7 @@ const Main = () => {
             setIsLoading(false);
          })
          .catch((error) => {
-            console.log(error);
+            notify(error.message);
          })
          .finally(() => {
             setIsLoading(false);
@@ -68,6 +72,7 @@ const Main = () => {
                );
             })}
          </div>
+         <Toaster position="bottom-left" duration={3000} />
       </div>
    );
 };
